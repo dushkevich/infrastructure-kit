@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tektur:wght@400..900&display=swap');
+
+body {
+    width: 100dvw;
+    height: 100dvh;
+    color: rgb(38, 39, 32);
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background-color: #bababa;
+    font-weight: 300;
+
+    font-family: Georgia, serif;
+
+    line-height: 1.4rem;
+    font-size: 18px;
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+    transition: all .5s ease;
+}
+
+a:hover {
+    color: #000000;
+    transition: all .5s ease;
+
+}
+
+#counter {
+    background-color: #0f1013;
+    color: #B2CFFF;
+    position: fixed;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+
+    border-radius: 0.5rem;
+    border: solid 1px #000000;
+    
+    
+    h1 {font-size: 25px; font-family: "Georgia", "serif";}
+    button {background-color: rgba(0, 0, 0, 0); color: #B2CFFF; border: solid 1px #B2CFFF;}
+}
+
+.container-fluid {
+    padding: 30px;
+    border: 1px solid rgb(0, 0, 0);
+
+    max-width: 1037px;
+
+}
+
+.col {
+    padding: 0;
+}
+
+
+.header-row {
+    margin-bottom: 20px;
+
+}
+
+.header-container {
+    height: 250px;
+    
+    padding: 40px;
+
+    .name {
+        font-size: 50px;
+        padding-bottom: 20px;
+    }
+}
+
+.contact-container {
+    height: 250px;
+    padding: 50px 0 0 40px;
+    ul {
+        
+        i {
+            margin: 0 10px 0 5px;
+        }
+        
+        li {
+            margin-bottom: 5px;   
+        }
+    }
+
+    h3 {
+        width: 100%;
+        padding: 0;
+        padding-bottom: 20px;
+        font-family: Georgia, serif;
+        text-transform: uppercase;
+        font-variant-caps: normal;
+    }
+}
+
+.profile-photo {
+  width: 300px;
+  height: auto;
+  border-radius: 0;
+  display: block;
+  margin: 0 auto;
+}
+
+.resume-section {
+    width: 100%;
+    padding: 20px;
+    margin: 0;
+    margin-top: 10px;
+    font-size: 18px;
+
+
+    border-top: 1px solid rgb(0, 0, 0);
+
+    
+    ul {
+        list-style: circle;
+        li {
+            margin-bottom: 5px;
+            line-height: 1.4rem;
+            font-size: 16px;   
+
+        }
+    }
+
+    h3 {
+        width: 100%;
+        padding: 0;
+        padding-bottom: 10px;
+        font-family: Georgia, serif;
+        text-transform: uppercase;
+        font-variant-caps: normal;
+    }
+
+}
+
+.about-me-section {
+    padding: 30px;
+    border-bottom: 1px rgb(0, 0, 0) solid;
+    border-top: 1px rgb(0, 0, 0) solid;
+
+    margin-bottom: 10px;
+}
+
+#content-column-1 {
+    height: 100%;
+    width: 100%;
+
+    font-weight: 300;
+
+    .education-section {
+        border-top: none;
+    }
+
+    .experience-section {
+        ul {
+            list-style: circle;
+            font-weight: 300;
+            font-size: 16px;
+        }
+    }
+}
+
+svg {
+    width: 40px;
+    height: 40px;
+}
+
+#content-column-2 {
+    height: 100%;
+    width: 100%;
+    border-right: 1px solid rgb(0, 0, 0);
+
+
+    .skill-section {
+
+        border-top: none;
+
+        .skills {
+            width: 100%;
+            list-style: circle;
+            li {
+                margin-bottom: 3px;
+            }    
+        }
+    
+        .tech-logos {
+            padding: 0;
+            width: 100%;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            
+        }
+    }
+}
+
+.projects-section {
+    border-top: 1px solid rgb(0, 0, 0);
+}
+
+@media (max-width: 953px) {
+    #content-column-2 {
+        border: none;
+    }
+    #content-column-1 {
+        border-left: 1px solid white;
+    }
+}
+
+
+@media (max-width: 767px) {
+    #content-column-2 {
+        border: none;
+    }
+    #content-column-1 {
+        border: none;
+    }
+}
+
+@media (min-width: 770px) {
+    .header-container {
+        margin-bottom: 20px;
+    }
+}
+
+
+@media (min-width: 923px) {
+    .header-container {
+        margin-bottom: 0;
+    }
+}
