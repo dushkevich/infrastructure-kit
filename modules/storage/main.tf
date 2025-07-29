@@ -13,12 +13,6 @@ resource "azurerm_storage_account" "storage" {
   resource_group_name      = azurerm_resource_group.storage.name
 }
 
-resource "azurerm_storage_container" "storage" {
-  name                 = local.container_name
-  storage_account_name = azurerm_storage_account.storage.name
-  # container_access_type = 
-}
-
 resource "azurerm_storage_blob" "storage" {
   for_each = local.blob_map
 
@@ -28,11 +22,15 @@ resource "azurerm_storage_blob" "storage" {
   # content_md5            = local.content_md5
   type                   = "Block"
   storage_account_name   = azurerm_storage_account.storage.name
-  storage_container_name = azurerm_storage_container.storage.name
+  storage_container_name = local.container_name
+
+  depends_on = [azurerm_storage_account.storage]
 }
 
 resource "azurerm_storage_account_static_website" "storage" {
   storage_account_id = azurerm_storage_account.storage.id
   index_document     = local.index
   # error_404_document = local.error
+
+  depends_on = [azurerm_storage_account.storage]
 }

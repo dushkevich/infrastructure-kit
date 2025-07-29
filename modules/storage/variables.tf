@@ -29,7 +29,7 @@ locals {
   # short_location = 
   rg_name        = format("rg-static-%s", var.project_name)
   sa_name        = format("sastatic%s94", var.project_name) // there is 94 at the end of the sa_name !!!!!!!
-  container_name = "web"
+  container_name = "$web"
 
   content_types = {
     html = "text/html"
@@ -43,9 +43,9 @@ locals {
   }
 
   blob_map = { for f in var.source_files : f => {
-    name         = basename(f)
-    extension    = split(".", basename(f))[-1]
-    content_type = lookup(local.content_types, split(".", basename(f))[-1], "text/html")
+    name = basename(f)
+    # extension    = element(split(".", basename(f)), -1)   split(".", basename(f))[-1]
+    content_type = lookup(local.content_types, element(split(".", basename(f)), -1), "text/html")
     # content_md5 = 
     }
   }
