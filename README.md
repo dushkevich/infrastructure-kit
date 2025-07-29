@@ -17,6 +17,7 @@ Each blueprint bundles all the necessary Terraform modules, defaults, and deploy
 1. **Static Website**  
    - Azure Storage + CDN  ([module](./modules/storage/main.tf))
    - CI/CD pipeline (GitHub Actions)  (Under construction)
+   Requires: `source_files` path in config.config pointing to your site assets (e.g., ./www)
 2. **Serverless API**  
    - Azure Function + Networking  
    - Optional backing database (Cosmos DB / Azure SQL)  
