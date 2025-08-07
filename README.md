@@ -70,6 +70,10 @@ compute    = false
 security   = false
 ```
 
+1. **Prepare Static Website Files**
+
+Copy your static website files (such as `index.html`, `styles.css`, images, etc.) into a `source_files` folder (www)
+
 1. **Deploy/destroy**
 Apply
 
@@ -81,6 +85,8 @@ Destroy
 ```bash
 ./kit.py -d
 ```
+
+---
 
 ## ⚙️ How It Works
 
@@ -112,7 +118,6 @@ Destroy
    - `./kit.py --destroy`  
    - → Destroys all resources and cleans up generated files.
 
----
 
 ## 📂 Project Layout
 ```arduino
