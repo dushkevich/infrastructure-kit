@@ -35,6 +35,59 @@ Each blueprint bundles all the necessary Terraform modules, defaults, and deploy
 
 ---
 
+## 🛠️ Quick Start
+
+1. **Clone the repo**  
+   ```bash
+   git clone https://github.com/dushkevich/infrastructure-kit.git
+   cd infrastructure‑kit
+   chmod +x kit.py
+   ```
+
+1. **Prerequisites**
+
+    * Azure subscription (even a Free tier is OK)
+
+    * Terraform 1.10+
+
+    * Python 3.6+
+
+    * Azure CLI installed and authenticated: `az login`
+
+1. **Edit config.config**
+
+```ini
+
+[tfvars]
+project_name = default
+location     = West US
+source_files = ./www
+
+[modules]
+storage    = true
+networking = false
+compute    = false
+security   = false
+```
+
+1. **Prepare Static Website Files**
+
+Copy your static website files (such as `index.html`, `styles.css`, images, etc.) into a `source_files` folder (`./www`)
+
+1. **Deploy/destroy**
+Apply
+
+```bash
+./kit.py -a
+```
+Destroy
+
+```bash
+./kit.py -d
+```
+
+---
+
 ## ⚙️ How It Works
 
 1. **Configure**  
@@ -65,49 +118,6 @@ Each blueprint bundles all the necessary Terraform modules, defaults, and deploy
    - `./kit.py --destroy`  
    - → Destroys all resources and cleans up generated files.
 
----
-
-## 🛠️ Quick Start
-
-1. **Clone the repo**  
-   ```bash
-   git clone https://github.com/dushkevich/infrastructure-kit.git
-   cd infrastructure‑kit
-   chmod +x kit.py
-   ```
-
-1. **Prerequisites**
-
-    * Azure subscription (even a Free tier is OK)
-
-    * Azure CLI installed and authenticated: `az login`
-
-1. **Edit config.config**
-
-```ini
-
-[tfvars]
-project_name = myapp
-location     = eastus
-source_files = ./www
-
-[modules]
-storage    = true
-networking = false
-compute    = false
-security   = false
-```
-
-1. **Deploy/destroy**
-
-```bash
-./kit.py --apply
-```
-Destroy
-
-```bash
-./kit.py --destroy
-```
 
 ## 📂 Project Layout
 ```arduino
@@ -116,9 +126,9 @@ Destroy
 ├── config.config.example
 ├── modules/
 │   ├── storage/ (static_website)
-│   ├── serverless_api/
-│   ├── container_web/
-│   └── three_tier/
+│   ├── keyvault/
+│   ├── remote-state/
+│   └── compute/
 └── README.md
 ```
 
