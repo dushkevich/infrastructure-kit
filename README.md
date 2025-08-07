@@ -72,7 +72,7 @@ security   = false
 
 1. **Prepare Static Website Files**
 
-Copy your static website files (such as `index.html`, `styles.css`, images, etc.) into a `source_files` folder (www)
+Copy your static website files (such as `index.html`, `styles.css`, images, etc.) into a `source_files` folder (`./www`)
 
 1. **Deploy/destroy**
 Apply
