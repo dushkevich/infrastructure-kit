@@ -75,6 +75,7 @@ security   = false
 Copy your static website files (such as `index.html`, `styles.css`, images, etc.) into a `source_files` folder (`./www`)
 
 1. **Deploy/destroy**
+
 Apply
 
 ```bash
@@ -85,6 +86,10 @@ Destroy
 ```bash
 ./kit.py -d
 ```
+
+1. **URL**
+
+The url to your site can be found in 'output.txt' file
 
 ---
 
